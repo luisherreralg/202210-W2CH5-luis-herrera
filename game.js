@@ -1,17 +1,57 @@
-import { gameGrid } from './gamegrid.js';
+import { aliveCell, deadCell, gameGrid, printGrid } from './gamegrid.js';
 
 export const game = () => {
-  const aliveCell = ['O'];
-  const deadCell = ['-'];
-  gameGrid[0][1] = aliveCell;
-  gameGrid[1][1] = aliveCell;
-  gameGrid[2][1] = aliveCell;
-
-  for (let l1 = 0; l1 < gameGrid[0].length; l1++) {
-    console.log('primer for');
-
-    for (let l2 = 0; l2 < gameGrid[1].length; l2++) {
-      console.log('segundo for');
+  for (let y = 0; y < 3; y++) {
+    for (let x = 0; x < 3; x++) {
+      checkAroundLive();
+      console.log(gameGrid());
     }
   }
 };
+
+const checkAroundLive = (y, x) => {
+  let aroundCounter = 0;
+
+  if (y === 0)
+    if (gameGrid[y - 1][x - 1] === aliveCell) {
+      aroundCounter++;
+    }
+
+  if (gameGrid[y - 1][x] === aliveCell) {
+    aroundCounter++;
+  }
+
+  if (gameGrid[y - 1][x - 1] === aliveCell) {
+    aroundCounter++;
+  }
+
+  if (gameGrid[y][x - 1] === aliveCell) {
+    aroundCounter++;
+  }
+
+  if (gameGrid[y][x + 1] === aliveCell) {
+    aroundCounter++;
+  }
+
+  if (gameGrid[y + 1][x - 1] === aliveCell) {
+    aroundCounter++;
+  }
+
+  if (gameGrid[y + 1][x] === aliveCell) {
+    aroundCounter++;
+  }
+
+  if (gameGrid[y + 1][x + 1] === aliveCell) {
+    aroundCounter++;
+  }
+
+  if (aroundCounter > 3) {
+    gameGrid[y][x] === deadCell;
+  } else if (aroundCounter < 2) {
+    gameGrid[y][x] === deadCell;
+  } else if (aroundCounter === 2 || aroundCounter === 3) {
+    gameGrid[y][x] === aliveCell;
+  }
+};
+
+game();
