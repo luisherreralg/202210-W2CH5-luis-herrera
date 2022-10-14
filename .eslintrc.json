@@ -5,6 +5,10 @@
         "node": true,
         "jest": true
     },
+     "quotes": [
+        2,
+        "double"
+    ],
     "extends": ["eslint:recommended", "prettier"],
     "overrides": [],
     "parserOptions": {
