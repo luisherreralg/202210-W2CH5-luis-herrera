@@ -2,10 +2,12 @@ import {
   pos1,
   pos2,
   pos3,
+  pos4,
+  pos5,
+  pos6,
   pos7,
   pos8,
   pos9,
-  posAllMid,
 } from './checkpositions.js';
 import {
   aliveCell,
@@ -19,6 +21,7 @@ export const game = () => {
   for (let y = 0; y < 3; y++) {
     for (let x = 0; x < 3; x++) {
       checkAroundLive(y, x);
+      console.log(y, x);
     }
   }
 };
@@ -26,7 +29,7 @@ export const game = () => {
 const checkAroundLive = (y, x) => {
   let aroundCounter = 0;
 
-  if (y === 0 || x === 0) {
+  if (y === 0 && x === 0) {
     aroundCounter = pos1(y, x);
   }
 
@@ -39,15 +42,15 @@ const checkAroundLive = (y, x) => {
   }
 
   if (y === 1 && x === 0) {
-    aroundCounter = posAllMid(y, x);
+    aroundCounter = pos4(y, x);
   }
 
   if (y === 1 && x === 1) {
-    aroundCounter = posAllMid(y, x);
+    aroundCounter = pos5(y, x);
   }
 
   if (y === 1 && x === 2) {
-    aroundCounter = posAllMid(y, x);
+    aroundCounter = pos6(y, x);
   }
 
   if (y === 2 && x === 0) {
@@ -64,21 +67,24 @@ const checkAroundLive = (y, x) => {
 
   if (aroundCounter > 3) {
     //Sobrepoblación = morir
-    gameSave[y][x] = deadCell;
+    gridSave[y][x] = deadCell;
   } else if (aroundCounter < 2) {
     // Muere por soledad
-    gameSave[y][x] = deadCell;
+    gridSave[y][x] = deadCell;
   } else if (aroundCounter === 3) {
     //Nace
-    gameSave[y][x] = aliveCell;
+    gridSave[y][x] = aliveCell;
   } else {
-    gameSave[y][x] = gameGrid[y][x];
+    gridSave[y][x] = gameGrid[y][x];
   }
-
-  console.log(aroundCounter);
 };
 
-let gridSave = [...gameGrid];
+let gridSave = [
+  ['', '', ''],
+  ['', '', ''],
+  ['', '', ''],
+];
 console.log(printGrid());
-game();
+
 console.log(printGrid());
+console.table(gridSave);
