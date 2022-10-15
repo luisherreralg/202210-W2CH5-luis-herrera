@@ -1,7 +1,7 @@
 export const deadCell = '⚪';
 export const aliveCell = '🔴';
 
-export const gameGrid = [
+export let gameGrid = [
   [deadCell, aliveCell, deadCell],
   [deadCell, aliveCell, deadCell],
   [deadCell, aliveCell, deadCell],
