@@ -1,4 +1,4 @@
-import { gameGridErrorControl } from './gamegrid.test.js';
+import { gameGridErrorControl } from './errorcontrol.functions.js';
 
 export const deadCell = '🌑';
 export const aliveCell = '🧫';

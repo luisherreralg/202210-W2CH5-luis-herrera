@@ -1,13 +1,5 @@
 import { createGridSave, createGameGrid } from './gamegrid.js';
 
-export const gameGridErrorControl = (Number) => {
-  if (typeof Number !== 'number') {
-    throw new Error(
-      'No se puede introducir un valor que no sea un tipo "number"'
-    );
-  }
-};
-
 describe('Given gameGridErrorControl function', () => {
   test('If parameter is different from typeof "number" ', () => {
     const notNumber = 'string';
