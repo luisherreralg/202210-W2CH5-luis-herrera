@@ -1,12 +1,26 @@
 export const deadCell = '⚪';
 export const aliveCell = '🔴';
 
-export let gameGrid = [
-  [deadCell, aliveCell, deadCell],
-  [deadCell, aliveCell, deadCell],
-  [deadCell, aliveCell, deadCell],
-];
+export const createGameGrid = () => {
+  const gameGrid = [
+    [deadCell, aliveCell, deadCell],
+    [deadCell, aliveCell, deadCell],
+    [deadCell, aliveCell, deadCell],
+  ];
+
+  return gameGrid;
+};
+
+export const createGridSave = () => {
+  const gridSave = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', ''],
+  ];
+
+  return gridSave;
+};
 
 export const printGrid = () => {
-  console.table(gameGrid);
+  return console.table(gameGrid);
 };

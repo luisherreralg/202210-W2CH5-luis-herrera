@@ -48,6 +48,11 @@ const aroundCheckers = () => {
   }
 };
 
+var emp_arr = Array.apply('empty', {
+  length: 3,
+});
+console.log(emp_arr);
+
 // 1 ---> aroundCounter = 2 (0,0) -- Derecha   // Derecha-Abajo   // Abajo
 // 2 ---> aroundCounter = 1 (0,1) -- Izquierda // Derecha         // Abajo // Derecha-Abajo // Izquierda-Abajo
 // 3 ---> aroundCounter = 2 (0,2) -- Izquierda // Izquierda-Abajo // Abajo
