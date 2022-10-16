@@ -17,7 +17,7 @@ export const game = (Number) => {
   console.table(gridSave);
   gameGrid = gridSave;
 
-  gridSave = createGridSave(13);
+  gridSave = createGridSave(Number);
 };
 
 const checkAroundLive = (y, x) => {
@@ -182,7 +182,9 @@ const checkDownLeft = (y, x) => {
   return counter;
 };
 
-console.table(gameGrid);
-setInterval(() => {
+setInterval(() => {}, 1000);
+
+export const runGame = () => {
+  console.table(gameGrid);
   game(13);
-}, 1000);
+};
