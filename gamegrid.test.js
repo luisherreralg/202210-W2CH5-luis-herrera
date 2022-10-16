@@ -44,13 +44,15 @@ describe('Given createGameGrid funciton', () => {
     const checkArray = () => {
       const arrTest = createGameGrid(2);
       let counter = 0;
-      for (let i = 0; i < arrTest.length; i++) {
-        for (let j = 0; j < arrTest.length; j++) {
-          if (arrTest[i][j] !== undefined) {
+
+      for (let value of arrTest) {
+        for (let value2 of arrTest) {
+          if (arrTest[value][value2] !== undefined) {
             counter++;
           }
         }
       }
+
       return counter;
     };
 
