@@ -5,19 +5,19 @@ import {
   deadCell,
 } from './gamegrid.js';
 
-let gameGrid = createGameGrid();
-let gridSave = createGridSave();
+let gameGrid = createGameGrid(13);
+let gridSave = createGridSave(13);
 
-export const game = () => {
-  for (let y = 0; y < 3; y++) {
-    for (let x = 0; x < 3; x++) {
+export const game = (Number) => {
+  for (let y = 0; y < Number; y++) {
+    for (let x = 0; x < Number; x++) {
       checkAroundLive(y, x);
     }
   }
   console.table(gridSave);
   gameGrid = gridSave;
 
-  gridSave = createGridSave();
+  gridSave = createGridSave(13);
 };
 
 const checkAroundLive = (y, x) => {
@@ -184,6 +184,5 @@ const checkDownLeft = (y, x) => {
 
 console.table(gameGrid);
 setInterval(() => {
-  game();
-}, 3000);
-// console.log(printGrid());
+  game(13);
+}, 1000);

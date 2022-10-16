@@ -1,22 +1,33 @@
-export const deadCell = '⚪';
-export const aliveCell = '🔴';
+export const deadCell = '🌑';
+export const aliveCell = '🧫';
 
-export const createGameGrid = () => {
-  const gameGrid = [
-    [deadCell, aliveCell, deadCell],
-    [deadCell, aliveCell, deadCell],
-    [deadCell, aliveCell, deadCell],
-  ];
+export const createGameGrid = (Number) => {
+  const gameGrid = [];
+
+  for (let j = 0; j < Number; j++) {
+    gameGrid[j] = [];
+    for (let i = 0; i < Number; i++) {
+      const randomCell = Math.floor(Math.random() * 3);
+      if (randomCell === 0) {
+        gameGrid[j].push(deadCell);
+      } else {
+        gameGrid[j].push(aliveCell);
+      }
+    }
+  }
 
   return gameGrid;
 };
 
-export const createGridSave = () => {
-  const gridSave = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', ''],
-  ];
+export const createGridSave = (Number) => {
+  const gridSave = [];
+
+  for (let j = 0; j < Number; j++) {
+    gridSave[j] = [];
+    for (let i = 0; i < Number; i++) {
+      gridSave[j].push('');
+    }
+  }
 
   return gridSave;
 };
