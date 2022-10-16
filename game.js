@@ -8,7 +8,7 @@ import {
 let gameGrid = createGameGrid(13);
 let gridSave = createGridSave(13);
 
-export const game = (Number) => {
+const game = (Number) => {
   for (let y = 0; y < Number; y++) {
     for (let x = 0; x < Number; x++) {
       checkAroundLive(y, x);
@@ -182,9 +182,7 @@ const checkDownLeft = (y, x) => {
   return counter;
 };
 
-setInterval(() => {}, 1000);
-
-export const runGame = () => {
-  console.table(gameGrid);
+export const runGame = (e) => {
   game(13);
+  return e;
 };
