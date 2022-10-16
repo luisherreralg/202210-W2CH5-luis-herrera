@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\lherr\OneDrive\Escritorio\asd\202210-W2CH5-luis-herrera\gamegrid.test.js">
+    <testCase name="Given gameGridErrorControl function If parameter is different from typeof &quot;number&quot; " duration="1"/>
+    <testCase name="Given createGridSave function If parameter is different from typeof &quot;number&quot; " duration="0"/>
+    <testCase name="Given createGridSave function When parameters are 2, the result must be an array with 2 arrays, each one must have 2 element" duration="1"/>
+    <testCase name="Given createGameGrid funciton If parameter is different from typeof &quot;number&quot; " duration="1"/>
+    <testCase name="Given createGameGrid funciton When parameters are 2, the result must be an array with 2 arrays, each one must have 2 elements" duration="0"/>
+  </file>
+</testExecutions>
