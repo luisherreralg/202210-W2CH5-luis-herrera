@@ -1,7 +1,10 @@
+import { gameGridErrorControl } from './errorcontrol.functions.js';
+
 export const deadCell = '🌑';
 export const aliveCell = '🧫';
 
 export const createGameGrid = (Number) => {
+  gameGridErrorControl(Number);
   const gameGrid = [];
 
   for (let j = 0; j < Number; j++) {
@@ -20,10 +23,12 @@ export const createGameGrid = (Number) => {
 };
 
 export const createGridSave = (Number) => {
+  gameGridErrorControl(Number);
   const gridSave = [];
 
   for (let j = 0; j < Number; j++) {
     gridSave[j] = [];
+
     for (let i = 0; i < Number; i++) {
       gridSave[j].push('');
     }
