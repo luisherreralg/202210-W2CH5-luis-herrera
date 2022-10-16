@@ -31,7 +31,3 @@ export const createGridSave = (Number) => {
 
   return gridSave;
 };
-
-export const printGrid = () => {
-  return console.table(gameGrid);
-};
