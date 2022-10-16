@@ -1,17 +1,18 @@
-export const deadCell = '🌑';
-export const aliveCell = '🧫';
+import { aliveCell, deadCell } from './cells_generator.js';
 
-export const createGameGrid = (Number) => {
+export const createGameGrid = (Number, emoteAlive, emoteDead) => {
   const gameGrid = [];
+  const deadCellemote = deadCell(emoteDead);
+  const aliveCellemote = aliveCell(emoteAlive);
 
   for (let j = 0; j < Number; j++) {
     gameGrid[j] = [];
     for (let i = 0; i < Number; i++) {
       const randomCell = Math.floor(Math.random() * 3);
       if (randomCell === 0) {
-        gameGrid[j].push(deadCell);
+        gameGrid[j].push(deadCellemote);
       } else {
-        gameGrid[j].push(aliveCell);
+        gameGrid[j].push(aliveCellemote);
       }
     }
   }
@@ -19,7 +20,7 @@ export const createGameGrid = (Number) => {
   return gameGrid;
 };
 
-export const createGridSave = (Number) => {
+export const createGridSave = (Number, emoteAlive, emoteDead) => {
   const gridSave = [];
 
   for (let j = 0; j < Number; j++) {
@@ -30,8 +31,4 @@ export const createGridSave = (Number) => {
   }
 
   return gridSave;
-};
-
-export const printGrid = () => {
-  return console.table(gameGrid);
 };
